@@ -1,12 +1,10 @@
 ### File created by: Rene Lacroix
 ### Date: 10 April 2015
-### Name of file: Plot1.R
-
+### Name of file: Plot2.R
 
 # Specify working directory
 
 setwd("C:/DataProjects/R/RprogCourse/ExploDataAna/Project1")
-
 
 # Data source: https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip
 
@@ -28,7 +26,7 @@ my_file <- "household_power_consumption.txt"
 tmp_elec_dat <- read.table(my_file, header = TRUE, sep = ";",na.strings = "?")
 
 
-# Convert the Date variable to date class
+# Convert the Date variable to Date class
 
 tmp_elec_dat$FDate <- as.Date(tmp_elec_dat$Date, "%d/%m/%Y")
 
@@ -41,12 +39,19 @@ maxDate <- as.Date("2007-02-02")
 elec_dat <- tmp_elec_dat[tmp_elec_dat$FDate >= minDate & tmp_elec_dat$FDate <= maxDate,]
 
 
-# Make plot 1 and save to png file (480*480 pixels)
+# Create DateTime variable
 
-png(filename = "Plot1.png",
+elec_dat$DateTime <- strptime(paste(elec_dat$Date, elec_dat$Time),"%d/%m/%Y %H:%M:%S")
+
+
+## Make Plot 2 and save to png file
+
+png(filename = "Plot2.png",
     width = 480, height = 480, units = "px", pointsize = 12,
     bg = "transparent")
-hist(elec_dat$Global_active_power, main = "Global Active Power", col = "red", breaks = 20, ylim = c(0, 1200), xlab = "Global Active Power (kilowatts)")
+with(elec_dat, plot(DateTime, Global_active_power, xlab = "", ylab = "Global Active Power (kilowatts)", type = "n"))
+lines(elec_dat$DateTime, elec_dat$Global_active_power)
 dev.off()
+
 
 # End of file
