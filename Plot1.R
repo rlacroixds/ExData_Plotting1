@@ -1,6 +1,6 @@
 ### File created by: Rene Lacroix
 ### Date: 10 April 2015
-### Name of file: Plot1.R
+### Name of file: plot1.R
 
 
 # Specify working directory
@@ -43,7 +43,7 @@ elec_dat <- tmp_elec_dat[tmp_elec_dat$FDate >= minDate & tmp_elec_dat$FDate <= m
 
 # Make plot 1 and save to png file (480*480 pixels)
 
-png(filename = "Plot1.png",
+png(filename = "plot1.png",
     width = 480, height = 480, units = "px", pointsize = 12,
     bg = "transparent")
 hist(elec_dat$Global_active_power, main = "Global Active Power", col = "red", breaks = 20, ylim = c(0, 1200), xlab = "Global Active Power (kilowatts)")

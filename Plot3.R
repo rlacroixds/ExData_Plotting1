@@ -1,6 +1,6 @@
 ### File created by: Rene Lacroix
 ### Date: 10 April 2015
-### Name of file: Plot3.R
+### Name of file: plot3.R
 
 # Specify working directory
 
@@ -48,7 +48,7 @@ elec_dat$DateTime <- strptime(paste(elec_dat$Date, elec_dat$Time),"%d/%m/%Y %H:%
 
 ## Make Plot 3 and save to png file
 
-png(filename = "Plot3.png",
+png(filename = "plot3.png",
     width = 480, height = 480, units = "px", pointsize = 12,
     bg = "transparent")
 with(elec_dat, plot(DateTime, Sub_metering_1, xlab = "", ylab = "Energy sub metering", type = "n"))

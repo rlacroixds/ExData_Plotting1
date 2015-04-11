@@ -1,6 +1,6 @@
 ### File created by: Rene Lacroix
 ### Date: 10 April 2015
-### Name of file: Plot4.R
+### Name of file: plot4.R
 
 # Specify working directory
 
@@ -48,7 +48,7 @@ elec_dat$DateTime <- strptime(paste(elec_dat$Date, elec_dat$Time),"%d/%m/%Y %H:%
 
 ## Make Plot 4 and save to png file
 
-png(filename = "Plot4.png",
+png(filename = "plot4.png",
     width = 480, height = 480, units = "px", pointsize = 12,
     bg = "transparent")
 

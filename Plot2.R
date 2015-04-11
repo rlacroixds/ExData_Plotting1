@@ -1,6 +1,6 @@
 ### File created by: Rene Lacroix
 ### Date: 10 April 2015
-### Name of file: Plot2.R
+### Name of file: plot2.R
 
 # Specify working directory
 
@@ -46,7 +46,7 @@ elec_dat$DateTime <- strptime(paste(elec_dat$Date, elec_dat$Time),"%d/%m/%Y %H:%
 
 ## Make Plot 2 and save to png file
 
-png(filename = "Plot2.png",
+png(filename = "plot2.png",
     width = 480, height = 480, units = "px", pointsize = 12,
     bg = "transparent")
 with(elec_dat, plot(DateTime, Global_active_power, xlab = "", ylab = "Global Active Power (kilowatts)", type = "n"))
